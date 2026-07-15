@@ -1,9 +1,9 @@
 <div align="center">
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<!-- HEADER -->
+<!-- HEADER — Banner animado customizado -->
 <!-- ═══════════════════════════════════════════════════════ -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:1E1B4B,25:4C1D95,50:7C3AED,75:8B5CF6,100:06B6D4&height=200&section=header&text=&fontSize=0"/>
+<img width="100%" src="assets/header.svg" alt="Header"/>
 
 <br>
 
@@ -17,28 +17,13 @@
 <br>
 
 <!-- ═══════════════════════════════════════════════════════ -->
-<!-- ABOUT ME -->
+<!-- ABOUT ME — Terminal animado -->
 <!-- ═══════════════════════════════════════════════════════ -->
 ## &nbsp;`> whoami`
 
-```js
-const matheus = {
-    nome: "Matheus Lima",
-    localização: "Brasil",
-    formação: "Análise e Desenvolvimento de Sistemas",
-
-    stack: {
-        backend:  ["PHP", "Laravel", "MySQL", "PostgreSQL"],
-        frontend: ["React", "JavaScript", "HTML5", "CSS3"],
-        tools:    ["Git", "Docker", "VS Code", "Linux"]
-    },
-
-    foco: "Sistemas web com Laravel + React",
-    aprendendo: "Arquitetura limpa, Design Patterns, Docker",
-    origem: "Comecei tentando hackear jogos, acabei escrevendo APIs",
-    meta: "Dominar microsserviços até o fim de 2026"
-};
-```
+<div align="center">
+<img width="90%" src="assets/terminal.svg" alt="Terminal"/>
+</div>
 
 <br>
 
@@ -141,6 +126,25 @@ const matheus = {
 <!-- ACTIVITY GRAPH -->
 <div align="center">
 <img width="90%" src="https://github-readme-activity-graph.vercel.app/graph?username=Matheuz0001&bg_color=0D1117&color=8B5CF6&line=06B6D4&point=8B5CF6&area=true&area_color=4C1D95&hide_border=true" alt="Activity Graph"/>
+</div>
+
+<br>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- METRICS — Lowlighter (gerado automaticamente) -->
+<!-- ═══════════════════════════════════════════════════════ -->
+## &nbsp;`> cat metrics.json`
+
+<div align="center">
+
+<img width="48%" src="assets/metrics-isocalendar.svg" alt="Isometric Calendar"/>
+&nbsp;
+<img width="48%" src="assets/metrics-languages.svg" alt="Languages"/>
+
+<img width="48%" src="assets/metrics-habits.svg" alt="Coding Habits"/>
+&nbsp;
+<img width="48%" src="assets/metrics-achievements.svg" alt="Achievements"/>
+
 </div>
 
 <br>

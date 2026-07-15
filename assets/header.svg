@@ -1,0 +1,246 @@
+<svg viewBox="0 0 850 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D1117"/>
+      <stop offset="50%" style="stop-color:#1E1B4B"/>
+      <stop offset="100%" style="stop-color:#0D1117"/>
+    </linearGradient>
+    <linearGradient id="borderGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4C1D95"/>
+      <stop offset="50%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#06B6D4"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="100%" style="stop-color:#06B6D4"/>
+    </linearGradient>
+    <linearGradient id="waveGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4C1D95;stop-opacity:0.3"/>
+      <stop offset="50%" style="stop-color:#8B5CF6;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:0.3"/>
+    </linearGradient>
+    <linearGradient id="waveGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06B6D4;stop-opacity:0.2"/>
+      <stop offset="50%" style="stop-color:#8B5CF6;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#4C1D95;stop-opacity:0.2"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="particleGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:0"/>
+    </radialGradient>
+    <clipPath id="rounded">
+      <rect x="0" y="0" width="850" height="280" rx="12"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    @keyframes float1 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes float2 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+    @keyframes meteor1 {
+      0% { transform: translate(900px, -50px); opacity: 0; }
+      5% { opacity: 1; }
+      30% { opacity: 1; }
+      35% { transform: translate(-100px, 330px); opacity: 0; }
+      100% { opacity: 0; }
+    }
+    @keyframes meteor2 {
+      0% { transform: translate(950px, -30px); opacity: 0; }
+      15% { opacity: 0; }
+      20% { opacity: 1; }
+      45% { opacity: 1; }
+      50% { transform: translate(-50px, 310px); opacity: 0; }
+      100% { opacity: 0; }
+    }
+    @keyframes meteor3 {
+      0% { transform: translate(850px, -60px); opacity: 0; }
+      40% { opacity: 0; }
+      45% { opacity: 1; }
+      70% { opacity: 1; }
+      75% { transform: translate(-150px, 340px); opacity: 0; }
+      100% { opacity: 0; }
+    }
+    @keyframes twinkle1 {
+      0%, 100% { opacity: 0.2; r: 1; }
+      50% { opacity: 1; r: 1.8; }
+    }
+    @keyframes twinkle2 {
+      0%, 100% { opacity: 0.3; r: 0.8; }
+      50% { opacity: 0.9; r: 1.5; }
+    }
+    @keyframes twinkle3 {
+      0%, 100% { opacity: 0.1; r: 1.2; }
+      50% { opacity: 0.8; r: 2; }
+    }
+    @keyframes wave1 {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-850px); }
+    }
+    @keyframes wave2 {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-850px); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.8; }
+    }
+    @keyframes nameGlow {
+      0%, 100% { filter: drop-shadow(0 0 4px #8B5CF680); }
+      50% { filter: drop-shadow(0 0 16px #06B6D480); }
+    }
+    @keyframes subtitleFade {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+    @keyframes dashMove {
+      0% { stroke-dashoffset: 20; }
+      100% { stroke-dashoffset: 0; }
+    }
+
+    .meteor { fill: none; stroke-linecap: round; }
+    .m1 { stroke: #8B5CF6; stroke-width: 2; animation: meteor1 8s linear infinite; }
+    .m2 { stroke: #06B6D4; stroke-width: 1.5; animation: meteor2 10s linear infinite; }
+    .m3 { stroke: #7C3AED; stroke-width: 1; animation: meteor3 12s linear infinite; }
+
+    .star1 { fill: #8B5CF6; animation: twinkle1 3s ease-in-out infinite; }
+    .star2 { fill: #06B6D4; animation: twinkle2 4s ease-in-out infinite; }
+    .star3 { fill: #E6EDF3; animation: twinkle3 5s ease-in-out infinite; }
+
+    .wave-group1 { animation: wave1 12s linear infinite; }
+    .wave-group2 { animation: wave2 16s linear infinite; }
+
+    .name-text {
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 36px;
+      font-weight: 700;
+      fill: url(#textGrad);
+      animation: nameGlow 4s ease-in-out infinite;
+    }
+    .subtitle-text {
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 14px;
+      fill: #8B949E;
+      animation: subtitleFade 6s ease-in-out infinite;
+    }
+    .bracket {
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 40px;
+      font-weight: 700;
+      fill: #06B6D4;
+      filter: url(#glow);
+    }
+    .bracket-float1 { animation: float1 4s ease-in-out infinite; }
+    .bracket-float2 { animation: float2 5s ease-in-out infinite; }
+
+    .center-glow {
+      animation: pulseGlow 5s ease-in-out infinite;
+    }
+
+    .border-line {
+      stroke: url(#borderGlow);
+      stroke-width: 1.5;
+      fill: none;
+      stroke-dasharray: 10 5;
+      animation: dashMove 2s linear infinite;
+    }
+  </style>
+
+  <g clip-path="url(#rounded)">
+    <!-- Background -->
+    <rect width="850" height="280" fill="url(#bgGrad)"/>
+
+    <!-- Grid pattern subtle -->
+    <g opacity="0.03">
+      <line x1="0" y1="0" x2="0" y2="280" stroke="#8B5CF6" stroke-width="0.5"/>
+      <line x1="50" y1="0" x2="50" y2="280" stroke="#8B5CF6" stroke-width="0.5"/>
+      <line x1="100" y1="0" x2="100" y2="280" stroke="#8B5CF6" stroke-width="0.5"/>
+      <line x1="150" y1="0" x2="150" y2="280" stroke="#8B5CF6" stroke-width="0.5"/>
+      <line x1="200" y1="0" x2="200" y2="280" stroke="#8B5CF6" stroke-width="0.5"/>
+      <line x1="250" y1="0" x2="250" y2="280" stroke="#8B5CF6" stroke-width="0.5"/>
+      <line x1="300" y1="0" x2="300" y2="280" stroke="#8B5CF6" stroke-width="0.5"/>
+      <line x1="350" y1="0" x2="350" y2="280" stroke="#8B5CF6" stroke-width="0.5"/>
+      <line x1="400" y1="0" x2="400" y2="280" stroke="#8B5CF6" stroke-width="0.5"/>
+      <line x1="450" y1="0" x2="450" y2="280" stroke="#8B5CF6" stroke-width="0.5"/>
+      <line x1="500" y1="0" x2="500" y2="280" stroke="#8B5CF6" stroke-width="0.5"/>
+      <line x1="550" y1="0" x2="550" y2="280" stroke="#8B5CF6" stroke-width="0.5"/>
+      <line x1="600" y1="0" x2="600" y2="280" stroke="#8B5CF6" stroke-width="0.5"/>
+      <line x1="650" y1="0" x2="650" y2="280" stroke="#8B5CF6" stroke-width="0.5"/>
+      <line x1="700" y1="0" x2="700" y2="280" stroke="#8B5CF6" stroke-width="0.5"/>
+      <line x1="750" y1="0" x2="750" y2="280" stroke="#8B5CF6" stroke-width="0.5"/>
+      <line x1="800" y1="0" x2="800" y2="280" stroke="#8B5CF6" stroke-width="0.5"/>
+      <line x1="850" y1="0" x2="850" y2="280" stroke="#8B5CF6" stroke-width="0.5"/>
+      <line x1="0" y1="50" x2="850" y2="50" stroke="#8B5CF6" stroke-width="0.5"/>
+      <line x1="0" y1="100" x2="850" y2="100" stroke="#8B5CF6" stroke-width="0.5"/>
+      <line x1="0" y1="150" x2="850" y2="150" stroke="#8B5CF6" stroke-width="0.5"/>
+      <line x1="0" y1="200" x2="850" y2="200" stroke="#8B5CF6" stroke-width="0.5"/>
+      <line x1="0" y1="250" x2="850" y2="250" stroke="#8B5CF6" stroke-width="0.5"/>
+    </g>
+
+    <!-- Center glow orb -->
+    <circle cx="425" cy="140" r="120" fill="url(#particleGlow)" class="center-glow"/>
+
+    <!-- Stars -->
+    <circle cx="45" cy="35" class="star1" style="animation-delay:0s"/>
+    <circle cx="120" cy="80" class="star2" style="animation-delay:1.2s"/>
+    <circle cx="200" cy="25" class="star3" style="animation-delay:0.5s"/>
+    <circle cx="310" cy="55" class="star1" style="animation-delay:2s"/>
+    <circle cx="380" cy="20" class="star2" style="animation-delay:0.8s"/>
+    <circle cx="500" cy="45" class="star3" style="animation-delay:1.5s"/>
+    <circle cx="580" cy="30" class="star1" style="animation-delay:0.3s"/>
+    <circle cx="650" cy="70" class="star2" style="animation-delay:2.5s"/>
+    <circle cx="720" cy="22" class="star3" style="animation-delay:1s"/>
+    <circle cx="790" cy="50" class="star1" style="animation-delay:1.8s"/>
+    <circle cx="830" cy="100" class="star2" style="animation-delay:0.6s"/>
+    <circle cx="70" cy="200" class="star3" style="animation-delay:2.2s"/>
+    <circle cx="160" cy="240" class="star1" style="animation-delay:1.4s"/>
+    <circle cx="750" cy="220" class="star2" style="animation-delay:0.9s"/>
+    <circle cx="680" cy="250" class="star3" style="animation-delay:2.8s"/>
+    <circle cx="280" cy="260" class="star1" style="animation-delay:0.4s"/>
+    <circle cx="550" cy="240" class="star2" style="animation-delay:1.7s"/>
+
+    <!-- Meteors -->
+    <line x1="0" y1="0" x2="60" y2="0" class="meteor m1"/>
+    <line x1="0" y1="0" x2="45" y2="0" class="meteor m2"/>
+    <line x1="0" y1="0" x2="35" y2="0" class="meteor m3"/>
+
+    <!-- Wave bottom -->
+    <g class="wave-group1">
+      <path d="M0,240 C100,220 200,260 425,240 C650,220 750,260 850,240 L850,280 L0,280Z M850,240 C950,220 1050,260 1275,240 C1500,220 1600,260 1700,240 L1700,280 L850,280Z" fill="url(#waveGrad1)"/>
+    </g>
+    <g class="wave-group2">
+      <path d="M0,255 C150,235 250,270 425,255 C600,240 750,270 850,255 L850,280 L0,280Z M850,255 C1000,235 1100,270 1275,255 C1450,240 1600,270 1700,255 L1700,280 L850,280Z" fill="url(#waveGrad2)"/>
+    </g>
+
+    <!-- Main text -->
+    <g class="bracket-float1">
+      <text x="175" y="148" class="bracket">{</text>
+    </g>
+    <text x="425" y="130" text-anchor="middle" class="name-text">Matheus Lima</text>
+    <text x="425" y="160" text-anchor="middle" class="subtitle-text">Full Stack Developer  ·  Laravel + React  ·  Brasil</text>
+    <g class="bracket-float2">
+      <text x="650" y="148" class="bracket">}</text>
+    </g>
+
+    <!-- Border -->
+    <rect x="0" y="0" width="850" height="280" rx="12" class="border-line"/>
+  </g>
+</svg>

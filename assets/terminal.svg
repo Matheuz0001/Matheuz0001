@@ -1,0 +1,139 @@
+<svg viewBox="0 0 850 220" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes glowPulse {
+      0%, 100% { filter: drop-shadow(0 0 2px #8B5CF6); }
+      50% { filter: drop-shadow(0 0 12px #06B6D4); }
+    }
+    @keyframes scanline {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(220px); }
+    }
+    @keyframes dotPulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+
+    .bg { fill: #0D1117; rx: 12; }
+    .titlebar { fill: #161B22; }
+    .dot-red { fill: #FF5F57; }
+    .dot-yellow { fill: #FEBC2E; }
+    .dot-green { fill: #28C840; }
+    .title-text { fill: #8B949E; font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace; font-size: 11px; }
+
+    .prompt { fill: #06B6D4; font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace; font-size: 13px; font-weight: 700; }
+    .command { fill: #8B5CF6; font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace; font-size: 13px; }
+    .output { fill: #8B949E; font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace; font-size: 12.5px; }
+    .highlight { fill: #06B6D4; }
+    .accent { fill: #8B5CF6; }
+    .white { fill: #E6EDF3; }
+
+    .cursor {
+      fill: #06B6D4;
+      animation: blink 1s step-end infinite;
+    }
+
+    .line1 { animation: fadeIn 0.5s ease-out 0.2s both; }
+    .line2 { animation: fadeIn 0.5s ease-out 0.6s both; }
+    .line3 { animation: fadeIn 0.5s ease-out 1.0s both; }
+    .line4 { animation: fadeIn 0.5s ease-out 1.4s both; }
+    .line5 { animation: fadeIn 0.5s ease-out 1.8s both; }
+    .line6 { animation: fadeIn 0.5s ease-out 2.2s both; }
+    .line7 { animation: fadeIn 0.5s ease-out 2.6s both; }
+    .line8 { animation: fadeIn 0.5s ease-out 3.0s both; }
+
+    .terminal-glow {
+      animation: glowPulse 4s ease-in-out infinite;
+    }
+
+    .scanline {
+      animation: scanline 8s linear infinite;
+      opacity: 0.03;
+    }
+  </style>
+
+  <defs>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E1B4B;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4C1D95;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- border glow -->
+  <rect x="0" y="0" width="850" height="220" rx="12" fill="url(#borderGrad)" class="terminal-glow"/>
+  <!-- bg -->
+  <rect x="1.5" y="1.5" width="847" height="217" rx="11" class="bg"/>
+
+  <!-- titlebar -->
+  <rect x="1.5" y="1.5" width="847" height="32" rx="11" class="titlebar"/>
+  <rect x="1.5" y="22" width="847" height="12" class="titlebar"/>
+
+  <!-- window dots -->
+  <circle cx="22" cy="17" r="5.5" class="dot-red"/>
+  <circle cx="40" cy="17" r="5.5" class="dot-yellow"/>
+  <circle cx="58" cy="17" r="5.5" class="dot-green"/>
+
+  <!-- title -->
+  <text x="425" y="21" text-anchor="middle" class="title-text">matheus@dev:~</text>
+
+  <!-- line separator -->
+  <line x1="1.5" y1="33.5" x2="848.5" y2="33.5" stroke="#21262D" stroke-width="1"/>
+
+  <!-- terminal content -->
+  <g class="line1">
+    <text x="20" y="58" class="prompt">$</text>
+    <text x="34" y="58" class="command">whoami</text>
+  </g>
+
+  <g class="line2">
+    <text x="20" y="78" class="output">Matheus Lima</text>
+    <text x="130" y="78" class="output">·</text>
+    <text x="142" y="78" class="highlight">Full Stack Developer</text>
+    <text x="310" y="78" class="output">·</text>
+    <text x="322" y="78" class="output">Brasil</text>
+  </g>
+
+  <g class="line3">
+    <text x="20" y="103" class="prompt">$</text>
+    <text x="34" y="103" class="command">cat stack.json</text>
+  </g>
+
+  <g class="line4">
+    <text x="20" y="123" class="accent">backend</text>
+    <text x="88" y="123" class="output">→</text>
+    <text x="104" y="123" class="white">PHP · Laravel · MySQL · PostgreSQL</text>
+  </g>
+
+  <g class="line5">
+    <text x="20" y="143" class="accent">frontend</text>
+    <text x="96" y="143" class="output">→</text>
+    <text x="112" y="143" class="white">React · JavaScript · HTML5 · CSS3</text>
+  </g>
+
+  <g class="line6">
+    <text x="20" y="163" class="accent">tools</text>
+    <text x="64" y="163" class="output">→</text>
+    <text x="80" y="163" class="white">Git · Docker · VS Code · Linux</text>
+  </g>
+
+  <g class="line7">
+    <text x="20" y="188" class="prompt">$</text>
+    <text x="34" y="188" class="command">echo $FOCUS</text>
+  </g>
+
+  <g class="line8">
+    <text x="20" y="208" class="highlight">Sistemas web com Laravel + React</text>
+    <rect x="280" y="196" width="8" height="15" class="cursor"/>
+  </g>
+
+  <!-- scanline effect -->
+  <rect x="1.5" y="0" width="847" height="4" fill="#8B5CF6" class="scanline"/>
+</svg>
